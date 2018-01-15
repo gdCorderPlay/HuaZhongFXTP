@@ -43,6 +43,8 @@ public class State_End : State_Base
     RaycastHit hit;
     Vector3 target;
     float delayTime;
+    private ParticleSystem _paryicle;
+
     /// <summary>
     /// 开始时执行
     /// </summary>
@@ -78,6 +80,7 @@ public class State_End : State_Base
     /// </summary>
     void JiaYaoDongHua2()
     {
+        
         mouseClock = true;
         modleYaoShao.GetComponent<Collider>().enabled = false;
         SingleModel.Model_DoorTop.DOMoveZ(0.15f, 1f).OnComplete(
@@ -157,6 +160,7 @@ public class State_End : State_Base
     /// </summary>
     public override void OnEnd()
     {
+        
         mouseClock = false;
         CameraViewer.Instance.ChangeCameraView(-48, 26, 0.9f, 1f, false);
         //提示实验结束
@@ -173,7 +177,7 @@ public class State_End : State_Base
         SingleModel.Model_DianXian.DOMove(new Vector3(0.15f, 0.09f, 0.45f), 1f).SetDelay(1f).OnComplete(() =>
         {
             SingleModel.Model_GanZaoBao.SetActive(true);
-            SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.2f, 0.09f, 0.09f);
+            SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.2f, 0.11f, 0.09f);
             // SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.008f, 0.1f, 0.029f);
             // modleBeaker.transform.DOMoveX(0.3f, 1f).SetDelay(2f).OnComplete(() => { GameObject.Destroy(modleBeaker.gameObject); });
             // SingleModel.Model_GanZaoBao.transform.DOMove(new Vector3(0, .1f, .09f), 2f).SetDelay(1f).OnComplete(() => CloseTheDoor());
@@ -304,6 +308,13 @@ public class State_End : State_Base
     /// </summary>
     void Init()
     {
+        
+        {
+            //_paryicle = GameObject.Find("particle").GetComponent<ParticleSystem>();
+            // _paryicle = GameObject.Find("YaoFenLiquid").GetComponent<ParticleSystem>();
+            _paryicle = GameObject. Instantiate(Resources.Load("YaoFenLiquid") as GameObject).GetComponent<ParticleSystem>();
+        }
+        _paryicle.gameObject.SetActive(false);
         count = 3; //需要的加药次数
         GlobalUIManager.Instance.SetMainStepTitle(State_CeLiang.targetWeight);
         // Debug.Log("测量目标值"+State_CeLiang.targetWeight);
@@ -396,11 +407,14 @@ public class State_End : State_Base
     /// </summary>
     void JiaYao()
     {
-        mouseClock = false;
+       
+        mouseClock = true;
+        _paryicle.gameObject.SetActive(true);
+        _paryicle.Play();
 
         count--;
-        modleYaoShao.transform.GetChild(1).DOScale(new Vector3(count / 3f, count / 3, count / 3), 1f);
-        modleBeaker.transform.GetChild(4).DOScale(new Vector3((3 - count) / 3, (3 - count) / 3, (3 - count) / 3), 1f);
+        modleYaoShao.transform.GetChild(1).DOScale(new Vector3(count / 3f, count / 3f, count / 3f), 1f).SetDelay(0.8f);
+        modleBeaker.transform.GetChild(4).DOScale(new Vector3((3 - count) / 3f, (3 - count) / 3f, (3 - count) / 3f), 1f).SetDelay(0.8f);
         // modleYaoShao.transform.DOLocalRotate(new Vector3(-45, 45, -55), 1f).SetLoops(2, LoopType.Yoyo).OnComplete(
         modleYaoShao.transform.DORotate(new Vector3(-45f, 0, 0), 1f, RotateMode.LocalAxisAdd).SetLoops(2, LoopType.Yoyo).OnComplete(
              () =>
@@ -474,7 +488,8 @@ public class State_End : State_Base
     /// </summary>
     protected override void RemoveAll()
     {
-
+        if (_paryicle != null)
+            GameObject.Destroy(_paryicle.gameObject) ;
         // modleBeaker.DOPause();
         // modleYaoPing.DOPause();
         // modleYaoShao.DOPause();

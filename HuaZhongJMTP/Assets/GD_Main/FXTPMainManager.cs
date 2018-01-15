@@ -39,7 +39,7 @@ public class FXTPMainManager : MonoBehaviour
     /// 当前的状态 默认是连接电源
     /// </summary>
     [HideInInspector]
-     private int currentType =7; //此处为了方便调试改为private 
+     private int currentType =0; //此处为了方便调试改为private 
 
     public StateType currentStateType
     {
@@ -189,7 +189,7 @@ public class FXTPMainManager : MonoBehaviour
             }
             else
             {
-                GlobalUIManager.Instance.ChangeStepIndexValue(step, stepControllState);
+                GlobalUIManager.Instance.ChangeStepIndexValue(step, GlobalUIManager.STEP_CONTROLL_STATE.Click);
 
                 currentType += step;
                 //点击跳转时需要 

@@ -35,6 +35,8 @@ namespace WJ
         /// <param name="_btn">Button.</param>
         private void MenuBtnClicked(Button _btn)
         {
+            if (FXTPMainManager.Instance.currentState.mouseClock) 
+                return;
             if (_btn.gameObject.name == "MenuBtn_2")
                 return;
             if (GlobalUIManager.Instance.UIControllState == GlobalUIManager.UI_CONTROLL_STATE.LOCK)
@@ -66,7 +68,7 @@ namespace WJ
         /// </summary>
 		private void ShowDoc(bool _bool)
         {
-            if (FXTPMainManager.Instance.currentState.mouseClock) return;
+           
             //			if (WholeDataManager.getInstance.stepEnum == WholeDataManager.StepEnum._调平) 
             //			{
             //				ModelConfigUtility.getInstance.BalanceLeft.raycastTarget = false;

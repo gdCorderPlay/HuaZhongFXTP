@@ -78,8 +78,8 @@ namespace WJ
             if(GlobalUIManager.stepIndex == _index && GlobalUIManager.stepSubIndex != _subIndex)
             {
                 int step = _subIndex - GlobalUIManager.stepSubIndex;
-                GlobalUIManager.stepIndex = _index;
-                GlobalUIManager.stepSubIndex = _subIndex;
+                //GlobalUIManager.stepIndex = _index;
+               // GlobalUIManager.stepSubIndex = _subIndex;
                 // 跳步
                 FXTPMainManager.Instance.ChangeNextState(step, GlobalUIManager.STEP_CONTROLL_STATE.Click);
                 GetComponentInParent<StepPanel>().Hide();

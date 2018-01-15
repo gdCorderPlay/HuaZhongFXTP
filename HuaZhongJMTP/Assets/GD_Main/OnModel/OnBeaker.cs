@@ -52,7 +52,7 @@ public class OnBeaker :  I_MoveModle
          {
             if (_CallBack != null)
             {
-                Vector3 target = (transform.position - other.transform.position).normalized * 0.04f + transform.position;
+                Vector3 target = (transform.position - other.transform.position).normalized * 0.02f + transform.position;
                 target.y = transform.position.y;
                 // transform.DOMove(target, SingleModel.escapeTime);
                 transform.position = target;

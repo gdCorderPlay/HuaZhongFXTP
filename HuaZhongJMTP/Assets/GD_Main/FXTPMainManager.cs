@@ -189,7 +189,7 @@ public class FXTPMainManager : MonoBehaviour
             }
             else
             {
-                GlobalUIManager.Instance.ChangeStepIndexValue(step, stepControllState);
+                GlobalUIManager.Instance.ChangeStepIndexValue(step, GlobalUIManager.STEP_CONTROLL_STATE.Click);
 
                 currentType += step;
                 //点击跳转时需要 

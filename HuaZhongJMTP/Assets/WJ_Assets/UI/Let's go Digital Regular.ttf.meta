@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 04a5b157a5beb5a408dc7e4b8089d7f0
+timeCreated: 1514986223
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Let's go Digital
+  fontNames:
+  - Let's go Digital
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

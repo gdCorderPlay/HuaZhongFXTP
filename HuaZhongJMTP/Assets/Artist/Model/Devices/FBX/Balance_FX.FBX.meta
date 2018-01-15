@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: d607d174723b1cf40af0ba7c2664ec92
+timeCreated: 1512094876
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Balance_FX_base_01
+    100004: Balance_FX_base_02
+    100006: Balance_FX_body
+    100008: Balance_FX_bubble
+    100010: Balance_FX_door_left
+    100012: Balance_FX_door_right
+    100014: Balance_FX_door_top
+    100016: Balance_FX_glass_back
+    100018: Balance_FX_glass_front
+    100020: Balance_FX_glass_left
+    100022: Balance_FX_glass_right
+    100024: Balance_FX_glass_top
+    100026: Balance_FX_handle_left
+    100028: Balance_FX_handle_right
+    100030: Balance_FX_handle_top
+    100032: Balance_FX_plastic
+    400000: //RootNode
+    400002: Balance_FX_base_01
+    400004: Balance_FX_base_02
+    400006: Balance_FX_body
+    400008: Balance_FX_bubble
+    400010: Balance_FX_door_left
+    400012: Balance_FX_door_right
+    400014: Balance_FX_door_top
+    400016: Balance_FX_glass_back
+    400018: Balance_FX_glass_front
+    400020: Balance_FX_glass_left
+    400022: Balance_FX_glass_right
+    400024: Balance_FX_glass_top
+    400026: Balance_FX_handle_left
+    400028: Balance_FX_handle_right
+    400030: Balance_FX_handle_top
+    400032: Balance_FX_plastic
+    2300000: Balance_FX_base_01
+    2300002: Balance_FX_base_02
+    2300004: Balance_FX_body
+    2300006: Balance_FX_bubble
+    2300008: Balance_FX_glass_back
+    2300010: Balance_FX_glass_front
+    2300012: Balance_FX_glass_left
+    2300014: Balance_FX_glass_right
+    2300016: Balance_FX_glass_top
+    2300018: Balance_FX_handle_left
+    2300020: Balance_FX_handle_right
+    2300022: Balance_FX_handle_top
+    2300024: Balance_FX_plastic
+    3300000: Balance_FX_base_01
+    3300002: Balance_FX_base_02
+    3300004: Balance_FX_body
+    3300006: Balance_FX_bubble
+    3300008: Balance_FX_glass_back
+    3300010: Balance_FX_glass_front
+    3300012: Balance_FX_glass_left
+    3300014: Balance_FX_glass_right
+    3300016: Balance_FX_glass_top
+    3300018: Balance_FX_handle_left
+    3300020: Balance_FX_handle_right
+    3300022: Balance_FX_handle_top
+    3300024: Balance_FX_plastic
+    4300000: Balance_FX_body
+    4300002: Balance_FX_glass_front
+    4300004: Balance_FX_glass_back
+    4300006: Balance_FX_base_01
+    4300008: Balance_FX_plastic
+    4300010: Balance_FX_bubble
+    4300012: Balance_FX_base_02
+    4300014: Balance_FX_glass_left
+    4300016: Balance_FX_handle_left
+    4300018: Balance_FX_glass_right
+    4300020: Balance_FX_handle_right
+    4300022: Balance_FX_glass_top
+    4300024: Balance_FX_handle_top
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

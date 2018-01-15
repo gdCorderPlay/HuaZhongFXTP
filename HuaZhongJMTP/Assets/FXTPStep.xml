@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StepDatas ExperimentName="分析天平">
+  <Operation OperationIndex="0" OperationDesc="准备工作">
+    
+    <Step StepIndex="0" StepDesc="将交流电源适配器的插头插入台面上的插座孔处，接通电源。" />
+    <Step StepIndex="1" StepDesc="旋转水平调节螺丝，将气泡调至中央，以弥补台面不平对称量结果造成的影响。" />
+    <Step StepIndex="2" StepDesc="空载状态下，单击《I/O》键，启动天平。" />
+    <Step StepIndex="3" StepDesc="按天平《Tare》键，完成去皮操作,使天平显示0.000g。" />
+    <Step StepIndex="4" StepDesc="按住《Cal》键不放，直到显示屏出现“CAL”字样后松开。" />
+    <Step StepIndex="5" StepDesc="拖拽符合外部校准重量的砝码到分析天平处，对天平进行校正。" />
+    
+  </Operation>
+  <Operation OperationIndex="1" OperationDesc="正式测量">
+    <Step StepIndex="6" StepDesc="拖拽符合称量标准的烧杯到分析天平处，将烧杯放在天平的秤盘上。" />
+    <Step StepIndex="7" StepDesc="拖拽药勺到琼脂糖干粉处，挖取一定重量并作为称量样品。" />
+  </Operation>
+</StepDatas>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClickInfo >
+
+  <!-- 没有接通电源时提示-->
+  <NoPowerInfoLog value = "实验开始，点击按钮接通电源。"/>
+  <!-- 准备工作完成时提示-->
+  <ReadyForTestInfoLog value = "准备工作已经完成，点击按钮开始实验。"/>
+  <!-- 继续添加药剂的提示  -->
+  <GoOnAddInfoLog value = "未达到待测量值，点击确定继续添加。"/>
+  <!-- 实验完成的提示  -->
+  <AppPlayOverInfoLog value = "本次实验操作已全部完成，点击确定重新开始。"/>
+  <!-- 称量过程中检测到未去皮的提示  -->
+  <WrongAddInfoLog value = "称量前未去皮，点击确定重新开始称量。"/>
+  <!-- 校准完成的提示  -->
+  <AppJiaoZhunOverInfoLog value = "校准第一阶段结束,请移去砝码后等待片刻。"/>
+  <!-- 随机当前测量值的提示  -->
+  <RandomWeightInfoLog value = "本次待测重量为"/>
+  <!-- 去皮初始化时提示取出干燥包  -->
+  <RemoveGanZaoBaoInitInfoLog value = "开机前应该处于空载状态，请取出干燥包。"/>
+  <!-- 药剂添加完成时的提示  -->
+  <AddCompleteInfoLog value = "已达到所需测量值，称量工作完成。"/>
+
+  <!-- 错误移动砝码时的提示  -->
+  <WrongMoveFaMaInfoLog value = "为防止砝码生锈，请使用镊子夹取砝码。"/>
+
+  <!-- 错误移动砝码时的提示  -->
+  <WrongRangeInfoLog value = "超出量程！请重新输入。"/>
+  <!-- 错误去皮操作-->
+  <WrongRemoveInfoLog value = "错误去皮，实验返回校准阶段。"/>
+  <!-- 错误去皮操作-->
+  <WrongRemoveInCeLiangInfoLog value = "错误去皮，请重新开始测量。"/>
+</ClickInfo>

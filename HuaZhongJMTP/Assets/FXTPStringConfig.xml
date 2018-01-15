@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StringConfig>
+<!-- 已接通电源时提示-->
+<PowerInfoLog value = "已接通电源"/>
+
+<!-- 天平初始化提示aaaaaaaaaaaaaaaaaaaaaaaaaa -->
+<!-- 调平初始化时提示  -->
+<BalanceInitInfoLog value = "点击三次，调平"/>
+
+<!-- 启动天平初始化时提示  -->
+<OnInitInfoLog value = "点击On，启动天平"/>
+
+  <!-- 最后一步的提示没办法进入下一步  -->
+  <LastStepInfoLog value = "已经是最后一步，无法跳转至下一步"/>
+
+  <!-- 去皮初始化时提示  -->
+  <RemoveInitInfoLog value = "等待去皮。"/>
+  
+  <!-- 校正按键初始化时提示  -->
+<CheckInitInfoLog value = "点击校正按钮，开始校正"/>
+
+<!-- 放置砝码时屏幕提示  -->
+<LayUpWeightInitInfoLog value = "外部砝码校准重量。"/>
+
+<!-- 砝码校正结束化时提示  -->
+<LayUpWeightCompleteInfoLog value = "天平校准过程结束，移去砝码。"/>
+
+<!-- 放置称量纸初始化时提示  -->
+<PanPaperInitInfoLog value = "拖拽烧杯到天平处，准备称量"/>
+
+<!-- 准备称量初始化时提示  -->
+<WeighUpSolidInitInfoLog value = "拖拽药勺到药盒处，准备称量"/>
+
+
+<!-- 天平按键提示bbbbbbbbbbbbbbbbbb -->
+<!-- 错误关闭电源时提示  -->
+<ErrorOnInfoLog value = "电源被关闭，实验返回等待启动步骤。"/>
+
+<!-- 没有调平时提示-->
+<NoBalanceInfoLog value = "请先完成调平操作。"/>
+
+<!-- 调平步骤完成时提示-->
+<BalanceCompleteInfoLog value = "调平步骤已完成，无需再次调平。"/>
+
+<!-- 没有启动天平时提示-->
+<NoOnInfoLog value = "请先启动天平。"/>
+
+<!-- 没有去皮时提示-->
+<NoRemoveInfoLog value = "称量前未去皮，请重新开始称量。"/>
+  <!-- 没有关门时提示-->
+  <NoCloseInfoLog value = "请先把门关上。"/>
+
+  <!-- 没有开门时提示-->
+  <NoOpenInfoLog value = "请先把门打开。"/>
+<!-- 校正按键已操作完成-->
+<CheckButtonInfoLog value = "校准操作已完成，无需再次校准。"/>
+
+<!-- 错误去皮操作-->
+<WrongRemoveInfoLog value = "错误去皮，实验返回等待正确去皮操作。"/>
+
+<!-- 不需要去皮-->
+<NoWayToRemoveInfoLog value = "无可去皮操作。"/>
+
+<!-- 其他ccccccccccccccccc -->
+<!-- 初始化操作进行中  -->
+<PrepareingInfoLog value = "准备工作进行中，不能跳转到其他步骤。"/>
+
+<!-- 初始化操作不需要重复  -->
+<NoRepeatPrepareInfoLog value = "准备工作已完成，无需重复操作。"/>
+
+<!-- 选择了错误砝码提示  -->
+<WrongWeightInfoLog value = "外部砝码校准重量为200g，请选择正确的砝码。"/>
+
+  <!-- 选择了错误砝码提示  -->
+  <WrongBreakerInfoLog value = "烧杯选择错误！"/>
+
+
+<!-- 药剂添加完成时的提示  -->
+<AddCompleteInfoLog value = "已达到所需测量值，称量工作完成。"/>
+
+<!-- 首次实验播放称量纸折叠视频的提示  -->
+<FirstPanPaperVideoInfoLog value = "首次操作实验，请观看正确折叠称量纸的方法。"/>
+
+<!-- 拖拽砝码需要使用镊子的提示  -->
+<NieZiWeightInfoLog value = "防止砝码生锈，造成称量不准确，使用镊子夹取砝码。"/>
+
+</StringConfig>

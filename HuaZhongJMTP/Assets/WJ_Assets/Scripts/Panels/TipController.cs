@@ -129,7 +129,7 @@ namespace WJ
                 CameraViewer.Instance.ChangeCameraView(lastCameraData.target, lastCameraData.XDeg, lastCameraData.YDeg, 
                     lastCameraData.currentDistance, 0.5f, delegate {
                        FXTPMainManager.Instance.isShowDes = false;
-                        return !lastCameraData.isAuto;
+                return !FXTPMainManager.Instance.currentAutoChange;
                     }
                     );
         }

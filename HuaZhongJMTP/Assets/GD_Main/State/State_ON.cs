@@ -38,6 +38,7 @@ public class State_ON : State_Base
                     OpenTheDoor();
                 }
                 );
+            FXTPMainManager.Instance.currentAutoChange = true;
             ; return false;
 
         });
@@ -67,10 +68,12 @@ public class State_ON : State_Base
     /// </summary>
     void RemoveGanZaoBao()
     {
+        mouseClock = true;
         SingleModel.Model_GanZaoBao.transform.DOMoveX(0.2f, 1.5f).OnComplete(() => { CloseTheDoor(); SingleModel.Model_GanZaoBao.SetActive(false); });
     }
     void OpenTheDoor()
     {
+       // mouseClock = true;
        // isMoveing = true;
         SingleModel.Model_Door.DOMove(Vector3.forward * .15f, 1).OnComplete(RemoveGanZaoBao);
         //更改提示信息
@@ -82,8 +85,10 @@ public class State_ON : State_Base
         //更改提示信息
         //0, 44, .6f,
         // CameraViewer.Instance.ChangeCameraView(-15, 30, .6f, 1.5f,false);
+        mouseClock = true;
         CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP.position + Vector3.up * 0.15f, 0, 30, 0.55f, 1, delegate {
-            
+            mouseClock = false;
+            FXTPMainManager.Instance.currentAutoChange = false;
              return true;
         });
     }

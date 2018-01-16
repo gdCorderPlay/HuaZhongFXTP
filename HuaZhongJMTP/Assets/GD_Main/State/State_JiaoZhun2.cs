@@ -42,7 +42,7 @@ public class State_JiaoZhun2 : State_Base {
         currentModle1.transform.DOMoveX(0.40f, 1).From();
         currentModle1.transform.DOScale(Vector3.one, 1f);
         currentModle1._CallBack +=  MoveFaMa;
-        currentModle1.transform.GetChild(0).gameObject.SetActive(false);
+       // currentModle1.transform.GetChild(0).gameObject.SetActive(false);
        // CameraViewer.Instance.ChangeCameraView(SingleModel.Model_Door, -30, 45, 0.5f, 2,false);
     }
    
@@ -60,6 +60,25 @@ public class State_JiaoZhun2 : State_Base {
         beaker.transform.SetParent(GameObject.Find("+ Models").transform);
 
         m_Action += beaker.GetComponent<I_MoveModle>().MoveTo;
+        return beaker;
+    }
+    /// <summary>
+    /// 生成物体
+    /// </summary>
+    /// <returns>The creat.</returns>
+    /// <param name="name">Name.</param>
+    /// <param name="parent">Parent.</param>
+    /// <param name="pos">Position.</param>
+    /// <param name="angle">Angle.</param>
+    GameObject Creat(string name,Transform parent,Vector3 pos,Vector3 angle)
+    {
+        GameObject obj = Resources.Load(name) as GameObject;
+        GameObject beaker = GameObject.Instantiate(obj);
+        beaker.name = name;
+        beaker.transform.SetParent(parent);
+        beaker.transform.localScale = Vector3.one*2;
+        beaker.transform.localEulerAngles = angle;
+        beaker.transform.localPosition = pos;
         return beaker;
     }
     public override void OnEnd()
@@ -94,20 +113,21 @@ public class State_JiaoZhun2 : State_Base {
                 SingleModel.Model_Door.DOMove(Vector3.forward * .15f, 1).OnComplete(() => {
 
                     //使用镊子移动砝码
-                    currentModle1.transform.GetChild(0).gameObject.SetActive(true);
+                    //currentModle1.transform.GetChild(0).gameObject.SetActive(true);
+                    Creat("neizi4",currentModle1.transform,new Vector3(0.0317f,0.0395f,0.0013f),Vector3.up*90);
                     currentModle1.transform.DOMove(currentModle1.transform.position + Vector3.up * .1f, 1)
                     .OnComplete(() => {
                         currentModle1.transform.DOMove(new Vector3(0, 0.1f, 0.03f), 1f).
                           OnComplete(() => {
                               _FaMaReady = true;
                               mouseClock = false;
-                              currentModle1.transform.GetChild(0).gameObject.SetActive(false);
+                              currentModle1.transform.GetChild(1).gameObject.SetActive(false);
 
                               CloseTheDoor();
                           });
                     });
                 });
-
+                FXTPMainManager.Instance.currentAutoChange = false;
                 return true;
             });
            
@@ -120,9 +140,15 @@ public class State_JiaoZhun2 : State_Base {
             
             if (mouseClock) return;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 10f, LayerMask.GetMask("taimian")))
-                {    
+                {
+                try
+                {
                     if (m_Action != null)
                         m_Action(hit.point);
+                }
+                catch{
+                    return;
+                }
                 }
         }
     }
@@ -163,8 +189,9 @@ public class State_JiaoZhun2 : State_Base {
                     for (int i = 0; i < modles.Length; i++)
                     {
                         GameObject.Destroy(modles[i].gameObject);
+                       
                     }
-
+                    Cursor.visible = true;
                     ViewAnimation();
                      //  });
                   

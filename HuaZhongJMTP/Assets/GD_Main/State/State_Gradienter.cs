@@ -106,7 +106,7 @@ public class State_Gradienter : State_Base
     {
         _FX_Base = GameObject.Find("+ Models/FXTP/Balance_FX/Balance_FX_base_02").transform;
         // CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, -60, 40, 0.3f, 2,delegate { OpenBalanceTip();return true; });
-        CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, -47, 20, 0.35f, 1, delegate { OpenBalanceTip(); return false; });
+        CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, -47, 20, 0.35f, 1, delegate { FXTPMainManager.Instance.currentAutoChange = true;OpenBalanceTip(); return false; });
     }
     public override void OnEnd()
     {

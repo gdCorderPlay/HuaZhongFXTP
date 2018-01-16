@@ -29,4 +29,7 @@
   <WrongRemoveInfoLog value = "错误去皮，实验返回校准阶段。"/>
   <!-- 错误去皮操作-->
   <WrongRemoveInCeLiangInfoLog value = "错误去皮，请重新开始测量。"/>
+
+     <!-- 实验结束时提示，先关机后断电-->
+  <OffPowerInfoLog value = "为延长天平使用寿命，请先关机后断电！"/>
 </ClickInfo>

@@ -23,6 +23,7 @@ public class State_Remove : State_Base {
         mouseClock = false;
         //CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, 0, 55, .4f, 2, false);
         CameraViewer.Instance.IsAutoChangeView=false;
+        FXTPMainManager.Instance.currentAutoChange = false;
         //SingleModel.Model_GanZaoBao.SetActive(true);
        // SingleModel.Model_GanZaoBao.transform.position = new Vector3(0, 0.093f, 0.089f);
         isMoveing = false;

@@ -64,7 +64,8 @@ public class OnBeaker :  I_MoveModle
                 //  InfoPanel.Instance.ShowInfo(GameObject.Find("Point").transform,
                 //  XMLManager.Instance.strConfigDir["WrongBreakerInfoLog"]);
                 FXTPMainManager.Instance.SetMouseClock(true);
-                MyLogger.Instance.Log(XMLManager.Instance.strConfigDir["WrongBreakerInfoLog"], 350, MyLogger.TextAlign.Center,
+                 
+                MyLogger.Instance.Log(string.Format("{0}{1}{2}{3}", transform.name.Split('_')[1], XMLManager.Instance.strConfigDir["WrongBreakerInfoLog"], State_CeLiang.targetWeight, "g药剂的称量。"), 350, MyLogger.TextAlign.Center,
                     delegate {
                         FXTPMainManager.Instance.SetMouseClock(false);
                     }
@@ -74,19 +75,29 @@ public class OnBeaker :  I_MoveModle
         //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
         //target.y = transform.position.y;
         //transform.DOMove(target, 0.5f);
+        if (isDrag)
+        {
+           
+            Vector3 target = (transform.position - other.transform.position).normalized * 0.04f + transform.position;
+            target.y = transform.position.y;
+            transform.position = target;
+        }
         isDrag = false;
         Cursor.visible = true;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
-        //target.y = transform.position.y;
-        //transform.DOMove(target, SingleModel.escapeTime);
-        Vector3 target = (transform.position - other.transform.position).normalized * 0.02f + transform.position;
-        target.y = transform.position.y;
-        // transform.DOMove(target, SingleModel.escapeTime);
-        transform.position = target;
+        if (isDrag)
+        {
+            //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
+            //target.y = transform.position.y;
+            //transform.DOMove(target, SingleModel.escapeTime);
+            Vector3 target = (transform.position - other.transform.position).normalized * 0.02f + transform.position;
+            target.y = transform.position.y;
+            // transform.DOMove(target, SingleModel.escapeTime);
+            transform.position = target;
+        }
     }
 }
 

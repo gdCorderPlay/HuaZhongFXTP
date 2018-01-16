@@ -51,7 +51,7 @@ public class State_CeLiang : State_Base
                 {
                     CameraViewer.Instance.ChangeCameraView(Vector3.up * 0.15f, 0, 21, .9f, 1, delegate
                     {
-                        
+                    FXTPMainManager.Instance.currentAutoChange = false;
                         return true;
                     });
                     Init();
@@ -93,22 +93,22 @@ public class State_CeLiang : State_Base
         {
             modleBeaker = beaker1;
             modleBeaker._CallBack += CallBack;
-            tipeInfo = "请选择250ml的烧杯";
-            desInfo = "250ml烧杯适用于10克以下药剂的称量";
+            tipeInfo = "请选择250ml的烧杯。";
+            desInfo = "250ml烧杯适用于10克以下药剂的称量。";
         } //选择合适的烧杯"250ml适用于10克以下的称量"
         else if (targetWeight < 50)
         {
             modleBeaker = beaker2;
             modleBeaker._CallBack += CallBack;
-            tipeInfo = "请选择500ml的烧杯";
-            desInfo = "500ml烧杯适用于10至50克药剂的称量";
+            tipeInfo = "请选择500ml的烧杯。";
+            desInfo = "500ml烧杯适用于10至50克药剂的称量。";
         }
         else
         {
             modleBeaker = beaker3;
             modleBeaker._CallBack += CallBack;
-            tipeInfo = "请选择1000ml的烧杯";
-            desInfo = "1000ml烧杯适用于50克以上药剂的称量";
+            tipeInfo = "请选择1000ml的烧杯。";
+            desInfo = "1000ml烧杯适用于50克以上药剂的称量。";
         }
        
         tipeInfo = string.Format("{0}{1}{2}{3}", XMLManager.Instance.clickConfigDir["RandomWeightInfoLog"], targetWeight,"g", tipeInfo);
@@ -184,7 +184,9 @@ public class State_CeLiang : State_Base
             mouseClock = true;
             InfoPanel.Instance.ShowInfo(modleBeaker.transform.Find("ShowPoint"), desInfo, 350, delegate {
                 mouseClock = false;
-                CameraViewer.Instance.ChangeCameraView(Vector3.up * 0.15f, -35, 35, .9f, 1, delegate { return true; });
+                CameraViewer.Instance.ChangeCameraView(Vector3.up * 0.15f, -35, 35, .9f, 1, delegate { 
+                    FXTPMainManager.Instance.currentAutoChange = false;
+                    return true; });
                 modleBeaker.GetComponent<Collider>().enabled = false;
                 SingleModel.Model_Door.DOMove(Vector3.forward * .15f, 1).SetDelay(1f).OnComplete(() => {
                     isOpen = true; //mouseClock = false;
@@ -244,6 +246,7 @@ public class State_CeLiang : State_Base
         {
             GameObject.Destroy(modles[i].gameObject);
         }
+        Cursor.visible = true;
     }
     public override void Resert()
     {

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114903756057827990}
   - component: {fileID: 54428913390931260}
   - component: {fileID: 114024026126733226}
+  - component: {fileID: 114421068915167284}
   m_Layer: 0
   m_Name: weight_100g
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390462799336972}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -0, z: -0}
+  m_LocalPosition: {x: 0.218087, y: 0.0162, z: 0.0264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.022000678, y: 0.039003633, z: 0.022000682}
-  m_Center: {x: 0, y: 0.019501816, z: -9.313226e-10}
+  m_Size: {x: 0.031032562, y: 0.039003633, z: 0.02984915}
+  m_Center: {x: 0.0003966689, y: 0.019501816, z: 0.00014491193}
 --- !u!114 &114024026126733226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,6 +126,17 @@ MonoBehaviour:
   tipMessage: 100g
   waitTime: 0.1
   _canShow: 1
+--- !u!114 &114421068915167284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390462799336972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cec2e4fae9e345758eb1cc564980fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114903756057827990
 MonoBehaviour:
   m_ObjectHideFlags: 1

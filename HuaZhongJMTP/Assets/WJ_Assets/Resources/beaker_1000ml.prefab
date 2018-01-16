@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114952484232499058}
   - component: {fileID: 114613886847646238}
   - component: {fileID: 54970177590949278}
+  - component: {fileID: 114470196795395960}
   m_Layer: 0
   m_Name: beaker_1000ml
   m_TagString: Untagged
@@ -129,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243241875765734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2402027, y: 0.0014999695, z: 0.04721719}
+  m_LocalPosition: {x: 0.45086244, y: -0.01622225, z: -0.007363379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4555360325927184}
@@ -307,8 +308,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0757443, y: 0.09426494, z: 0.07351805}
-  m_Center: {x: -0.0011288971, y: 0.057132475, z: 0.00020665675}
+  m_Size: {x: 0.101775706, y: 0.09426494, z: 0.099499926}
+  m_Center: {x: 0.0015813708, y: 0.057132475, z: -0.001348801}
+--- !u!114 &114470196795395960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243241875765734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cec2e4fae9e345758eb1cc564980fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114613886847646238
 MonoBehaviour:
   m_ObjectHideFlags: 1

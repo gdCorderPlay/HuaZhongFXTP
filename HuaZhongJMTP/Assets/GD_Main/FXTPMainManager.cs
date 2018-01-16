@@ -9,6 +9,7 @@ using System;
  
 public class FXTPMainManager : MonoBehaviour
 {
+    
     #region 主入口的单例
     private static FXTPMainManager _instance;
     public static FXTPMainManager Instance
@@ -29,7 +30,10 @@ public class FXTPMainManager : MonoBehaviour
         }
     }
     #endregion
-    
+    /// <summary>
+    /// 
+    /// </summary>
+    public  bool currentAutoChange;
     /// <summary>
     /// 各个阶段的状态枚举
     /// </summary>
@@ -83,6 +87,7 @@ public class FXTPMainManager : MonoBehaviour
         }
     }
 
+
     private void ButtonOnUp(string buttonName)
     {
         if (currentState != null&&!isShowDes)
@@ -134,6 +139,7 @@ public class FXTPMainManager : MonoBehaviour
         //{
         //    currentState.Resert();
         //}
+
     }
     /// <summary>
     /// 当前步骤下要进行的操作

@@ -33,7 +33,7 @@ public class OnFaMa : I_MoveModle
             //    isDrag = false;
 
             //}
-
+            //
             if (Vector3.Distance(target + offsetPos, transform.position) > SingleModel.maxDistance*0.8f)
             {
                 Cursor.visible = true;
@@ -80,6 +80,16 @@ public class OnFaMa : I_MoveModle
                    // XMLManager.Instance.strConfigDir["WrongWeightInfoLog"]);
             }
         }
+        if (isDrag)
+        {
+            //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
+            //target.y = transform.position.y;
+            //transform.DOMove(target, SingleModel.escapeTime);
+            Vector3 target = (transform.position - other.transform.position).normalized * 0.02f + transform.position;
+            target.y = transform.position.y;
+            // transform.DOMove(target, SingleModel.escapeTime);
+            transform.position = target;
+        }
             isDrag = false;
         Cursor.visible = true;
         //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
@@ -89,12 +99,15 @@ public class OnFaMa : I_MoveModle
 
     private void OnTriggerStay(Collider other)
     {
-        //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
-        //target.y = transform.position.y;
-        //transform.DOMove(target, SingleModel.escapeTime);
-        Vector3 target = (transform.position - other.transform.position).normalized * 0.01f + transform.position;
-        target.y = transform.position.y;
-        // transform.DOMove(target, SingleModel.escapeTime);
-        transform.position = target;
+        if (isDrag)
+        {
+            //Vector3 target = (transform.position - other.transform.position) * 0.2f + transform.position;
+            //target.y = transform.position.y;
+            //transform.DOMove(target, SingleModel.escapeTime);
+            Vector3 target = (transform.position - other.transform.position).normalized * 0.01f + transform.position;
+            target.y = transform.position.y;
+            // transform.DOMove(target, SingleModel.escapeTime);
+            transform.position = target;
+        }
     }
 }

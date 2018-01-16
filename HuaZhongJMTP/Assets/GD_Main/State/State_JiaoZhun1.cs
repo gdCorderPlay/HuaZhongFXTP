@@ -20,6 +20,7 @@ public class State_JiaoZhun1 :State_Base {
         SingleModel.UI_TextInfo.text = SingleModel.zero;
         // CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, 0, 60, 0.4f, 2, false);
         CameraViewer.Instance.IsAutoChangeView = false;
+        FXTPMainManager.Instance.currentAutoChange = false;
         readyToJiaoZhun = false;
         _DoorClose = true;
     }

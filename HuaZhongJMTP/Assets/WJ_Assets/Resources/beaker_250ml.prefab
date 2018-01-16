@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 65856243772358456}
   - component: {fileID: 114701048390751568}
   - component: {fileID: 54906486016228446}
+  - component: {fileID: 114941696683281440}
   m_Layer: 0
   m_Name: beaker_250ml
   m_TagString: Untagged
@@ -155,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848843907272078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.465, y: 0.042, z: -0.052}
+  m_LocalPosition: {x: 0.5265907, y: -0.01622225, z: 0.36109263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4007706268684896}
@@ -307,8 +308,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.054884344, y: 0.069265544, z: 0.04860614}
-  m_Center: {x: 0.00068481266, y: 0.03958592, z: -0.000027874485}
+  m_Size: {x: 0.069717646, y: 0.069265544, z: 0.06837797}
+  m_Center: {x: 0.000051498413, y: 0.03958592, z: -0.00043034554}
 --- !u!114 &114669572056473586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,3 +335,14 @@ MonoBehaviour:
   tipMessage: 250ml
   waitTime: 0.1
   _canShow: 1
+--- !u!114 &114941696683281440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848843907272078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cec2e4fae9e345758eb1cc564980fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

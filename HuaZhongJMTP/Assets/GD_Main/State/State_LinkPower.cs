@@ -22,7 +22,7 @@ public class State_LinkPower : State_Base
         MyLogger.Instance.Log(XMLManager.Instance.clickConfigDir["NoPowerInfoLog"], 350, MyLogger.TextAlign.Center, delegate
         {
             mouseClock = true;
-            CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, -20, 20, 0.7f, 1, delegate {mouseClock=false; MoveTheElectricWire();return true; });
+            CameraViewer.Instance.ChangeCameraView(SingleModel.Model_FXTP, -20, 20, 0.7f, 1, delegate {FXTPMainManager.Instance.currentAutoChange = false;mouseClock=false; MoveTheElectricWire();return true; });
            
         });
     }

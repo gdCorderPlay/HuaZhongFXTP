@@ -92,6 +92,7 @@ public class State_End : State_Base
                {
 
                    pingGai.gameObject.SetActive(false);//关闭瓶盖
+                   pingGai.localScale = Vector3.zero;
                    modleYaoShao.transform.DORotate(new Vector3(0, 0, 50), 1);
 
                    //target = new Vector3(modleYaoPing.transform.position.x + 0.04f, modleYaoPing.transform.position.z, modleYaoShao.transform.position.y + 0.13f);
@@ -161,57 +162,63 @@ public class State_End : State_Base
     public override void OnEnd()
     {
         
-        mouseClock = false;
+        mouseClock = true;
         CameraViewer.Instance.ChangeCameraView(-48, 26, 0.9f, 1f, false);
-        //提示实验结束
-        SingleModel.UI_TextInfo.text = SingleModel.Close;
-        SingleModel.UI_TextDanWeiInfo.text = SingleModel.Close;
-        GameObject.Find("+ Models/FXTP/Balance_FX/Balance_FX_base_01").GetComponent<Renderer>().sharedMaterial.
-              SetColor("_EmissionColor", new Color(0, 0, 0));
-        // OpenTheDoor();
-        //Transform pingGai = modleYaoPing.transform.GetChild(1);
+        FXTPMainManager.Instance.currentAutoChange = false;
+        //提示实验结束 需要先关闭电源
+        InfoPanel.Instance.ShowInfo(SingleModel.UI_ShowInfoPoint, XMLManager.Instance.clickConfigDir["OffPowerInfoLog"], 350, delegate{
 
-        // modleYaoPing.transform.GetChild(1).DOMoveY(modleYaoPing.transform.GetChild(1).position.y + 0.1f, 1).SetDelay(1f).OnComplete(()=> { });
+            mouseClock = false;
+            SingleModel.UI_TextInfo.text = SingleModel.Close;
+            SingleModel.UI_TextDanWeiInfo.text = SingleModel.Close;
+            GameObject.Find("+ Models/FXTP/Balance_FX/Balance_FX_base_01").GetComponent<Renderer>().sharedMaterial.
+                  SetColor("_EmissionColor", new Color(0, 0, 0));
+            // OpenTheDoor();
+            //Transform pingGai = modleYaoPing.transform.GetChild(1);
 
-        
-        SingleModel.Model_DianXian.DOMove(new Vector3(0.15f, 0.09f, 0.45f), 1f).SetDelay(1f).OnComplete(() =>
-        {
-            SingleModel.Model_GanZaoBao.SetActive(true);
-            SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.2f, 0.11f, 0.09f);
-            // SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.008f, 0.1f, 0.029f);
-            // modleBeaker.transform.DOMoveX(0.3f, 1f).SetDelay(2f).OnComplete(() => { GameObject.Destroy(modleBeaker.gameObject); });
-            // SingleModel.Model_GanZaoBao.transform.DOMove(new Vector3(0, .1f, .09f), 2f).SetDelay(1f).OnComplete(() => CloseTheDoor());
-            SingleModel.Model_GanZaoBao.transform.DOMove(new Vector3(0.008f, 0.1f, 0.029f), 1f).OnComplete(
-                delegate
-                {
-                    SingleModel.Model_Door.DOMove(Vector3.zero, 2).OnComplete(
+            // modleYaoPing.transform.GetChild(1).DOMoveY(modleYaoPing.transform.GetChild(1).position.y + 0.1f, 1).SetDelay(1f).OnComplete(()=> { });
 
-                        delegate
-                        {
-                            if (modleBeaker)
+
+            SingleModel.Model_DianXian.DOMove(new Vector3(0.15f, 0.09f, 0.45f), 1f).SetDelay(1f).OnComplete(() =>
+            {
+                SingleModel.Model_GanZaoBao.SetActive(true);
+                SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.2f, 0.11f, 0.09f);
+                // SingleModel.Model_GanZaoBao.transform.position = new Vector3(0.008f, 0.1f, 0.029f);
+                // modleBeaker.transform.DOMoveX(0.3f, 1f).SetDelay(2f).OnComplete(() => { GameObject.Destroy(modleBeaker.gameObject); });
+                // SingleModel.Model_GanZaoBao.transform.DOMove(new Vector3(0, .1f, .09f), 2f).SetDelay(1f).OnComplete(() => CloseTheDoor());
+                SingleModel.Model_GanZaoBao.transform.DOMove(new Vector3(0.008f, 0.1f, 0.029f), 1f).OnComplete(
+                    delegate
+                    {
+                        SingleModel.Model_Door.DOMove(Vector3.zero, 2).OnComplete(
+
+                            delegate
                             {
-                                GameObject.Destroy(modleBeaker.gameObject);
+                                if (modleBeaker)
+                                {
+                                    GameObject.Destroy(modleBeaker.gameObject);
+                                }
+                                mouseClock = true;
+                                MyLogger.Instance.Log(XMLManager.Instance.clickConfigDir["AppPlayOverInfoLog"], 350, MyLogger.TextAlign.Center, delegate
+                                {
+                                    mouseClock = false;
+                                    GlobalUIManager.stepIndex = 0;
+                                    GlobalUIManager.stepSubIndex = 0;
+
+                                    SceneManager.LoadScene("FXTPGD");
+                                });
                             }
-                            mouseClock = true;
-                            MyLogger.Instance.Log(XMLManager.Instance.clickConfigDir["AppPlayOverInfoLog"], 350, MyLogger.TextAlign.Center, delegate
-                            {
-                                mouseClock = false;
-                                GlobalUIManager.stepIndex = 0;
-                                GlobalUIManager.stepSubIndex = 0;
+                            );
 
-                                SceneManager.LoadScene("FXTPGD");
-                            });
-                        }
-                        );
+                    }
+                    //() => CloseTheDoor()
 
-                }
-                  //() => CloseTheDoor()
-                
-                );
-            //提示实验完成
-           
+                    );
+                //提示实验完成
 
+
+            });
         });
+       
     }
     /// <summary>
     /// 实时更新的方法
@@ -413,8 +420,8 @@ public class State_End : State_Base
         _paryicle.Play();
 
         count--;
-        modleYaoShao.transform.GetChild(1).DOScale(new Vector3(count / 3f, count / 3f, count / 3f), 1f).SetDelay(0.8f);
-        modleBeaker.transform.GetChild(4).DOScale(new Vector3((3 - count) / 3f, (3 - count) / 3f, (3 - count) / 3f), 1f).SetDelay(0.8f);
+        modleYaoShao.transform.GetChild(1).DOScale(new Vector3(count / 3f, count / 3f, count / 3f), 1f).SetDelay(0.4f);
+        modleBeaker.transform.GetChild(4).DOScale(new Vector3((3 - count) / 3f, (3 - count) / 3f, (3 - count) / 3f), 1f).SetDelay(0.6f);
         // modleYaoShao.transform.DOLocalRotate(new Vector3(-45, 45, -55), 1f).SetLoops(2, LoopType.Yoyo).OnComplete(
         modleYaoShao.transform.DORotate(new Vector3(-45f, 0, 0), 1f, RotateMode.LocalAxisAdd).SetLoops(2, LoopType.Yoyo).OnComplete(
              () =>
